@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İstatistikler ve Dashboard - HabitBalance</title>
+    <!-- Font Awesome ve CSS bağlantıları -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body style="padding: 0; margin: 0;">
+
+
+    <!-- ÜST BİLGİ ÇUBUĞU (HEADER) -->
+    <header class="hb-topbar">
+        <div class="hb-topbar-left">
+            <button id="menuToggleBtn" class="hb-menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <a href="../pages/anasayfa.html" class="hb-logo-link">
+                <!-- logo.png dosyanın adından emin ol -->
+                <img src="../images/logo.png" alt="Logo" class="hb-logo-img">
+            </a>
+        </div>
+
+        <div class="hb-topbar-right">
+            <button class="hb-btn-new-goal" onclick="window.location.href='../pages/analiz.html'">
+                <i class="fa-solid fa-plus"></i> Yeni Hedef Ekle
+            </button>
+
+            <div class="hb-user-menu-wrapper">
+                <img src="../images/ava.jpg" alt="User" class="hb-topbar-avatar" id="topbarAvatar">
+
+                <div class="hb-user-dropdown" id="userDropdown">
+                    <button type="button" id="logoutBtn">
+                        <i class="fa-solid fa-right-from-bracket"></i> Çıkış Yap
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="hb-dashboard-body">
+
+        <!-- YAN MENÜ (SIDEBAR) -->
+        <!-- YAN MENÜ (SIDEBAR) -->
+        <aside class="hb-sidebar" id="sidebar">
+            <nav class="hb-sidebar-menu">
+                <!-- active sınıfını buradan kaldırdık -->
+                <a href="../pages/anasayfa.html" class="hb-menu-item">
+                    <i class="fa-solid fa-house"></i> Anasayfa
+                </a>
+                <a href="../pages/analiz.html" class="hb-menu-item">
+                    <i class="fa-solid fa-chart-pie"></i> Kullanım Analizi
+                </a>
+                <!-- active sınıfını buraya ekledik -->
+                <a href="../pages/dashboard.html" class="hb-menu-item active">
+                    <i class="fa-solid fa-chart-line"></i> İstatistikler
+                </a>
+                <a href="../pages/profil.html" class="hb-menu-item">
+                    <i class="fa-solid fa-user"></i> Profil
+                </a>
+            </nav>
+        </aside>
+
+        <div class="hb-dashboard-content" style="padding: 40px 20px;">
+
+            <div class="hb-dash-header">
+                <h3>Özet Kartları</h3>
+                <div class="hb-dash-cards">
+                    <div class="hb-stat-card">
+                        <div class="hb-stat-icon" style="background: #ffe5e5; color: #ff5252;">
+                            <i class="fa-solid fa-arrow-trend-down"></i>
+                        </div>
+                        <div class="hb-stat-details">
+                            <span class="hb-stat-title">Günlük Ekran Süresi</span>
+                            <h4 id="dashboardScreenTime" class="hb-stat-value">0sa</h4>
+                            <span class="hb-stat-trend negative">Analiz sonrası güncellenir</span>
+                        </div>
+                    </div>
+
+                    <div class="hb-stat-card">
+                        <div class="hb-stat-icon" style="background: #e6fffa; color: #38b2ac;">
+                            <i class="fa-solid fa-share-nodes"></i>
+                        </div>
+                        <div class="hb-stat-details">
+                            <span class="hb-stat-title">Sosyal Medya</span>
+                            <h4 id="dashboardSocialMedia" class="hb-stat-value">0sa</h4>
+                            <span class="hb-stat-trend positive">Analiz sonrası güncellenir</span>
+                        </div>
+                    </div>
+
+                    <div class="hb-stat-card">
+                        <div class="hb-stat-icon" style="background: #ebf4ff; color: #6c63ff;">
+                            <i class="fa-solid fa-clock-rotate-left"></i>
+                        </div>
+                        <div class="hb-stat-details">
+                            <span class="hb-stat-title">Çalışma Verimliliği</span>
+                            <h4 id="dashboardProductivity" class="hb-stat-value">%0</h4>
+                            <span class="hb-stat-trend positive">Analiz sonrası hesaplanır</span>
+                        </div>
+                    </div>
+
+                    <div class="hb-stat-card">
+                        <div class="hb-stat-icon" style="background: #e0e7ff; color: #5a67d8;">
+                            <i class="fa-solid fa-scale-balanced"></i>
+                        </div>
+                        <div class="hb-stat-details">
+                            <span class="hb-stat-title">Dijital Denge Skoru</span>
+                            <h4 id="dashboardDigitalScore" class="hb-stat-value">0/100</h4>
+                            <span class="hb-stat-trend positive">Analiz sonrası hesaplanır</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hb-dash-charts-row">
+                <!-- Haftalık Analiz -->
+                <div class="hb-chart-box">
+                    <div class="hb-chart-header">
+                        <h4>Haftalık Kullanım Analizi</h4>
+                        <select>
+                            <option>2026</option>
+                        </select>
+                    </div>
+                    <div class="hb-chart-placeholder">
+                        <canvas id="weeklyUsageChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Bugünkü Dağılım -->
+                <div class="hb-chart-box">
+                    <div class="hb-chart-header">
+                        <h4>Bugünkü Dağılım</h4>
+                    </div>
+                    <div class="hb-chart-placeholder">
+                        <canvas id="todayDistributionChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hb-dash-charts-row full">
+                <!-- Aylık Trend -->
+                <div class="hb-chart-box">
+                    <div class="hb-chart-header">
+                        <h4>Aylık Gelişim Trendi</h4>
+                        <a href="#">Tümünü Gör</a>
+                    <div class="hb-chart-placeholder" style="height: 300px;">
+                        <canvas id="monthlyTrendChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- ... Diğer içerikler ... -->
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const menuToggleBtn = document.getElementById('menuToggleBtn');
+                const sidebar = document.getElementById('sidebar');
+
+                if (menuToggleBtn && sidebar) {
+                    // Menü butonuna tıklandığında aç/kapat
+                    menuToggleBtn.addEventListener('click', function (e) {
+                        e.stopPropagation();
+                        sidebar.classList.toggle('open');
+                    });
+
+                    // Menü dışına tıklandığında (mobilde) menüyü kapat
+                    document.addEventListener('click', function (e) {
+                        if (!sidebar.contains(e.target) && !menuToggleBtn.contains(e.target)) {
+                            sidebar.classList.remove('open');
+                        }
+                    });
+                }
+            });
+        </script>
+        <script src="../js/dashboard.js"></script>
+        <script src="../js/script.js"></script>
+</body>
+</body>
+
+</html>

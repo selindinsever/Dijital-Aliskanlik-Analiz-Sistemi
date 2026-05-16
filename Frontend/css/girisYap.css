@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    /* Orijinal arka plan gradyanın */
+    background: linear-gradient(135deg, #cec1e2 0%, #8cb8e1 50%, #568aa7 100%);
+}
+
+/* Ana Konteyner */
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 950px;
+    min-height: 580px;
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* SOL BÖLÜM (Form Alanı) */
+.left-side {
+    flex: 1;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Formun yatayda ortalanması için */
+    padding: 40px;
+    position: relative;
+    /* Linkin konumlanması için gerekli */
+}
+
+/* Sağ Üst Köşedeki Kayıt Ol Linki */
+.login-link {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    font-size: 13px;
+    color: #64748b;
+}
+
+.login-link a {
+    color: #6B74E6;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 4px;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+.logo-area {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.logo-area img {
+    width: 140px;
+    height: auto;
+}
+
+/* FORM BOYUTU - Kompakt ve fit görünüm */
+.form-container {
+    width: 100%;
+    max-width: 300px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 8px;
+    color: #111;
+    font-weight: 700;
+    text-align: left;
+}
+
+p.subtitle {
+    color: #777;
+    margin-bottom: 25px;
+    font-size: 14px;
+    text-align: left;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 13px;
+    color: #555;
+    font-weight: 600;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #e2e8f0;
+    background-color: #f8fafc;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+    background-color: #ffffff;
+    border-color: #6B74E6;
+    box-shadow: 0 0 0 3px rgba(107, 116, 230, 0.1);
+}
+
+
+
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background-color: #6B74E6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #5861D3;
+    transform: translateY(-1px);
+}
+
+/* SAĞ BÖLÜM (Görsel Alanı) */
+.right-side {
+    flex: 1;
+    background-color: #A5A9F1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.right-side img {
+    max-width: 85%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Responsive Ayarlar */
+@media (max-width: 850px) {
+    .container {
+        flex-direction: column;
+        max-width: 400px;
+        min-height: auto;
+    }
+
+    .right-side {
+        display: none;
+    }
+
+    .left-side {
+        padding: 50px 30px;
+    }
+
+    .login-link {
+        position: static;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+}

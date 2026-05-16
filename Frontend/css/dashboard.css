@@ -1,0 +1,192 @@
+/* ==========================================
+   DASHBOARD & İSTATİSTİKLER (GÜNCEL TASARIM)
+   ========================================== */
+
+.hb-dashboard-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+
+.hb-dash-cards {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.hb-stat-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.hb-stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
+}
+
+.hb-stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+.hb-chart-placeholder canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.hb-stat-details {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.hb-stat-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: #718096;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.hb-stat-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin: 0 0 4px 0;
+}
+
+.hb-stat-trend {
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.hb-stat-trend.positive {
+    color: #38a169;
+}
+
+.hb-stat-trend.negative {
+    color: #e53e3e;
+}
+
+.hb-dash-charts-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+.hb-dash-charts-row.full {
+    grid-template-columns: 1fr;
+}
+
+.hb-chart-box {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+    min-width: 0;
+}
+
+.hb-chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.hb-chart-header h4 {
+    margin: 0;
+    font-size: 16px;
+    color: #1a1a2e;
+}
+
+
+.hb-chart-placeholder {
+    width: 100%;
+    height: 250px;
+    background: #f8fafc;
+    border: 2px dashed #cbd5e0;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #a0aec0;
+    font-size: 13px;
+    text-align: center;
+    padding: 20px;
+}
+
+.hb-chart-header a {
+    font-size: 13px;
+    color: #6c63ff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+
+.hb-chart-header a:hover {
+    color: #5a52d5;
+    text-decoration: underline;
+}
+
+
+@media (max-width: 1000px) {
+    .hb-dash-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hb-dash-charts-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .hb-dash-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .hb-stat-card {
+        padding: 15px;
+    }
+
+    .hb-stat-value {
+        font-size: 18px;
+    }
+}
+.hb-chart-placeholder {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    display: block !important;
+    padding: 15px;
+}
+
+.hb-dash-charts-row.full .hb-chart-placeholder {
+    height: 300px;
+}
+
+.hb-chart-placeholder canvas {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+}

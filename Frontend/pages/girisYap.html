@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş Yap | HabitBalance</title>
+    <link rel="stylesheet" href="../css/girisYap.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="left-side">
+            <div class="login-link">
+                Hesabınız yok mu? <a href="../pages/kayitOl.html">Kayıt Ol</a>
+            </div>
+
+            <div class="logo-area">
+                <img src="../images/logo.png" alt="HabitBalance Logo">
+            </div>
+
+            <div class="form-container">
+                <h1>Tekrar Hoş Geldin!</h1>
+                <p class="subtitle">Devam etmek için lütfen giriş bilgilerini gir.</p>
+
+                <form id="loginForm">
+                    <div class="input-group">
+                        <label>Email</label>
+                        <input id="loginEmail" type="email" placeholder="ornek@mail.com" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Şifre</label>
+                        <input id="loginPassword" type="password" placeholder="••••••••" required>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Giriş Yap</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="right-side">
+            <img src="../images/gorsel.png" alt="HabitBalance Illustration">
+        </div>
+    </div>
+    <script src="../js/auth.js"></script>
+</body>
+
+</html>

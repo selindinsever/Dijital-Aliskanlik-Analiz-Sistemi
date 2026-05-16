@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıt Ol | HabitBalance</title>
+    <link rel="stylesheet" href="../css/kayitOl.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="left-side">
+            <div class="login-link">
+                Hesabın var mı? <a href="../pages/girisYap.html">Giriş Yap</a>
+            </div>
+
+            <div class="logo-area">
+                <img src="../images/logo.png" alt="HabitBalance Logo">
+            </div>
+
+            <div class="form-container">
+                <h1>Hesap Oluştur</h1>
+
+                <form id="registerForm">
+                    <div class="input-group">
+                        <label>İsim Soyisim</label>
+                        <input id="registerFullName" type="text" placeholder="Adınızı girin" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Email</label>
+                        <input id="registerEmail" type="email" placeholder="ornek@mail.com" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Şifre</label>
+                        <input id="registerPassword" type="password" placeholder="En az 8 karakter" required>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Kayıt Ol</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="right-side">
+            <img src="../images/gorsel.png" alt="HabitBalance Illustration">
+        </div>
+    </div>
+    <script src="../js/auth.js"></script>
+</body>
+
+</html>

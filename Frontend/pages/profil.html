@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kullanıcı Profili - HabitBalance</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <div class="hb-dashboard-layout">
+
+        <header class="hb-topbar">
+            <div class="hb-topbar-left">
+                <button id="menuToggleBtn" class="hb-menu-toggle"><i class="fa-solid fa-bars"></i></button>
+
+                <a href="../pages/anasayfa.html" class="hb-logo-link">
+                    <img src="../images/logo.png" alt="Logo" class="hb-logo-img">
+                </a>
+            </div>
+            <div class="hb-topbar-right">
+                <button class="hb-btn-new-goal" onclick="window.location.href='../pages/analiz.html'">
+                    <i class="fa-solid fa-plus"></i> Yeni Hedef Ekle
+                </button>
+                <div class="hb-user-menu-wrapper">
+                    <img src="../images/ava.jpg" alt="User" class="hb-topbar-avatar" id="topbarAvatar">
+
+                    <div class="hb-user-dropdown" id="userDropdown">
+                        <button type="button" id="logoutBtn">
+                            <i class="fa-solid fa-right-from-bracket"></i> Çıkış Yap
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="hb-dashboard-body">
+
+            <aside class="hb-sidebar" id="sidebar">
+                <nav class="hb-sidebar-menu">
+                    <a href="../pages/anasayfa.html" class="hb-menu-item">
+                        <i class="fa-solid fa-house"></i> Anasayfa
+                    </a>
+                    <a href="../pages/analiz.html" class="hb-menu-item">
+                        <i class="fa-solid fa-chart-pie"></i> Kullanım Analizi
+                    </a>
+                    <a href="../pages/dashboard.html" class="hb-menu-item">
+                        <i class="fa-solid fa-chart-line"></i> İstatistikler
+                    </a>
+                    <a href="../pages/profil.html" class="hb-menu-item active">
+                        <i class="fa-solid fa-user"></i> Profil
+                    </a>
+                </nav>
+            </aside>
+
+            <main class="hb-main-content">
+                <div class="hb-settings-container">
+
+                    <section class="hb-settings-header">
+                        <div class="hb-settings-avatar-wrapper" style="position: relative; display: inline-block;">
+                            <img src="../images/ava.jpg" alt="Profil" class="hb-settings-avatar" id="profileImage">
+                            <div class="hb-settings-edit-icon" id="editPhotoBtn"><i class="fa-solid fa-pen"></i></div>
+                            <div class="hb-settings-photo-menu" id="photoMenu">
+                                <button type="button" id="changePhotoBtn"><i class="fa-solid fa-image"></i> Fotoğrafı
+                                    Değiştir</button>
+                                <button type="button" id="removePhotoBtn" class="danger-text"><i
+                                        class="fa-solid fa-trash-can"></i> Fotoğrafı Kaldır</button>
+                            </div>
+                            <input type="file" id="fileInput" accept="image/*" style="display: none;">
+                        </div>
+                        <h1 id="profileFullName" class="hb-settings-user-name">Kullanıcı Adı</h1>
+                        <p id="profileEmail" class="hb-settings-user-email">email@example.com</p>
+                    </section>
+
+                    <section class="hb-settings-section">
+                        <h2 class="hb-settings-section-title"><i class="fa-regular fa-id-badge"></i> Kişisel Bilgiler
+                        </h2>
+                        <div class="hb-settings-grid">
+                            <div class="hb-settings-field">
+                                <label>Ad Soyad</label>
+                                <div class="hb-settings-input-group">
+                                    <i class="fa-regular fa-user"
+                                        style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: #a0aec0;"></i>
+                                    <input type="text" id="nameInput" placeholder="Ad Soyad"
+                                        style="padding-left: 35px;">
+                                </div>
+                                <div class="hb-settings-input-error" id="nameError"></div>
+                            </div>
+                            <div class="hb-settings-field">
+                                <label>E-posta Adresi</label>
+                                <div class="hb-settings-input-group">
+                                    <i class="fa-regular fa-envelope"
+                                        style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: #a0aec0;"></i>
+                                    <input type="email" id="emailInput" placeholder="ornek@gmail.com"
+                                        style="padding-left: 35px;">
+                                </div>
+                                <div class="hb-settings-input-error" id="emailError"></div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="hb-settings-section">
+                        <h2 class="hb-settings-section-title"><i class="fa-solid fa-lock"></i> Güvenlik</h2>
+                        <div class="hb-settings-grid">
+                            <div class="hb-settings-field">
+                                <label>Yeni Şifre</label>
+                                <div class="hb-settings-input-group">
+                                    <i class="fa-solid fa-key"
+                                        style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: #a0aec0;"></i>
+                                    <input type="password" id="passInput" placeholder="********"
+                                        style="padding-left: 35px;">
+                                </div>
+                                <div class="hb-settings-input-error" id="passError"></div>
+                            </div>
+                            <div class="hb-settings-field">
+                                <label>Şifreyi Onayla</label>
+                                <div class="hb-settings-input-group">
+                                    <i class="fa-solid fa-check-double"
+                                        style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: #a0aec0;"></i>
+                                    <input type="password" id="passConfirmInput" placeholder="********"
+                                        style="padding-left: 35px;">
+                                </div>
+                                <div class="hb-settings-input-error" id="passConfirmError"></div>
+                            </div>
+                        </div>
+                        <div class="hb-settings-info-row">
+                            <small>Harf ve rakamlardan oluşan en az 8 karakter kullanın.</small>
+                            <a href="#" class="hb-settings-link">E-posta ile şifre sıfırla</a>
+                        </div>
+                    </section>
+
+                    <div id="formStatusMessage" class="hb-settings-status-message"></div>
+                    <button class="hb-settings-submit-btn" id="saveBtn">Değişiklikleri Kaydet</button>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/profile.js"></script>
+</body>
+
+</html>

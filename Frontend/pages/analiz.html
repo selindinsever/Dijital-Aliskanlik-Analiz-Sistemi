@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dijital Alışkanlık Analizi - HabitBalance</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <div class="hb-dashboard-layout">
+
+        <header class="hb-topbar">
+            <div class="hb-topbar-left">
+                <button id="menuToggleBtn" class="hb-menu-toggle"><i class="fa-solid fa-bars"></i></button>
+                <a href="../pages/anasayfa.html" class="hb-logo-link">
+                    <img src="../images/logo.png" alt="Logo" class="hb-logo-img">
+                </a>
+            </div>
+            <div class="hb-topbar-right">
+                <button class="hb-btn-new-goal" onclick="window.location.href='../pages/analiz.html'">
+                    <i class="fa-solid fa-plus"></i> Yeni Hedef Ekle
+                </button>
+                <div class="hb-user-menu-wrapper">
+                    <img src="../images/ava.jpg" alt="User" class="hb-topbar-avatar" id="topbarAvatar">
+
+                    <div class="hb-user-dropdown" id="userDropdown">
+                        <button type="button" id="logoutBtn">
+                            <i class="fa-solid fa-right-from-bracket"></i> Çıkış Yap
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="hb-dashboard-body">
+
+            <aside class="hb-sidebar" id="sidebar">
+                <nav class="hb-sidebar-menu">
+                    <a href="../pages/anasayfa.html" class="hb-menu-item">
+                        <i class="fa-solid fa-house"></i> Genel Bakış
+                    </a>
+                    <a href="../pages/analiz.html" class="hb-menu-item active">
+                        <i class="fa-solid fa-chart-pie"></i> Kullanım Analizi
+                    </a>
+                    <a href="../pages/dashboard.html" class="hb-menu-item">
+                        <i class="fa-solid fa-chart-line"></i> İstatistikler
+                    </a>
+                    <a href="../pages/profil.html" class="hb-menu-item">
+                        <i class="fa-solid fa-user"></i> Profil
+                    </a>
+                </nav>
+            </aside>
+
+            <main class="hb-main-content">
+                <div class="hb-analysis-wrapper">
+
+                    <div class="hb-analysis-page-header">
+                        <h1>Dijital Alışkanlık Analizi</h1>
+                        <p>Dijital dünyadaki varlığınızı anlamak ve daha dengeli bir yaşam sürmek için
+                            alışkanlıklarınızı detaylıca inceleyelim.</p>
+                    </div>
+
+                    <section class="hb-analysis-section">
+                        <div class="hb-analysis-section-title">
+                            <span class="hb-analysis-icon"><i class="fa-solid fa-mobile-screen"
+                                    style="color: #6c63ff;"></i></span>
+                            <div>
+                                <h2>Ekran Zamanı</h2>
+                                <p>Bugünkü toplam ekran ve sosyal medya süreleriniz.</p>
+                            </div>
+                        </div>
+                        <div class="hb-analysis-grid">
+                            <div class="hb-analysis-card">
+                                <label>Bugünkü toplam ekran süreniz?</label>
+                                <small>Telefon, tablet and bilgisayar.</small>
+                                <select class="hb-analysis-input mt-10">
+                                    <option>0 - 2 Saat</option>
+                                    <option>2 - 4 Saat</option>
+                                    <option selected>4 - 6 Saat</option>
+                                    <option>6 - 8 Saat</option>
+                                    <option>8+ Saat</option>
+                                </select>
+                            </div>
+                            <div class="hb-analysis-card">
+                                <label>Sosyal medyada ne kadar vakit geçirdiniz?</label>
+                                <small>Instagram, X, TikTok vb.</small>
+                                <select id="socialMediaHours" class="hb-analysis-input mt-10">
+                                    <option value="1">30 Dakikadan az</option>
+                                    <option value="2">30 Dk - 1 Saat</option>
+                                    <option value="3" selected>1 - 3 Saat</option>
+                                    <option value="5">3 - 5 Saat</option>
+                                    <option value="7">5+ Saat</option>
+                                </select>
+                            </div>
+                            <div class="hb-analysis-card full-width">
+                                <label>En yoğun kullandığınız platform?</label>
+                                <small>Zamanınızın çoğunu alan kategori.</small>
+                                <div class="hb-analysis-pill-group mt-10">
+                                    <input type="radio" id="plat-sosyal" name="platform" value="sosyal" checked>
+                                    <label for="plat-sosyal">Sosyal Medya</label>
+
+                                    <input type="radio" id="plat-video" name="platform" value="video">
+                                    <label for="plat-video">Eğlence / Video</label>
+
+                                    <input type="radio" id="plat-is" name="platform" value="is">
+                                    <label for="plat-is">İş / Eğitim</label>
+
+                                    <input type="radio" id="plat-oyun" name="platform" value="oyun">
+                                    <label for="plat-oyun">Oyun</label>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="hb-analysis-section">
+                        <div class="hb-analysis-section-title">
+                            <span class="hb-analysis-icon"><i class="fa-solid fa-bullseye"
+                                    style="color: #6c63ff;"></i></span>
+                            <div>
+                                <h2>Verimlilik ve Odak</h2>
+                                <p>Algoritmanın verimlilik skoru üretmesi için temel veriler.</p>
+                            </div>
+                        </div>
+                        <div class="hb-analysis-grid">
+                            <div class="hb-analysis-card">
+                                <label>Odaklanarak çalıştığınız süre?</label>
+                                <small>İş veya ders için kesintisiz odak.</small>
+                                <select id="workHours" class="hb-analysis-input mt-10">
+                                    <option value="0">Hiç çalışmadım</option>
+                                    <option value="2">1 - 2 Saat</option>
+                                    <option value="4" selected>3 - 4 Saat</option>
+                                    <option value="6">5 - 6 Saat</option>
+                                    <option value="8">7+ Saat</option>
+                                </select>
+                            </div>
+                            <div class="hb-analysis-card">
+                                <label>Bildirimler odaklanmanızı ne kadar böldü?</label>
+                                <small>1: Hiç bölünmedi - 5: Sürekli bölündü</small>
+                                <input type="range" class="hb-analysis-range mt-10" min="1" max="5" value="3" step="1">
+                                <div class="hb-analysis-range-labels">
+                                    <span>Hiç (1)</span>
+                                    <span>Orta (3)</span>
+                                    <span>Sürekli (5)</span>
+                                </div>
+                            </div>
+                            <div class="hb-analysis-card full-width">
+                                <label>Cihazların bugünkü veriminize etkisi?</label>
+                                <small>1: Çok Olumsuz - 10: Çok Olumlu</small>
+                                <input type="range" class="hb-analysis-range mt-10" min="1" max="10" value="5" step="1">
+                                <div class="hb-analysis-range-labels">
+                                    <span>Çok Olumsuz (1)</span>
+                                    <span>Nötr (5)</span>
+                                    <span>Çok Olumlu (10)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="hb-analysis-section">
+                        <div class="hb-analysis-section-title">
+                            <span class="hb-analysis-icon"><i class="fa-solid fa-heart-pulse"
+                                    style="color: #6c63ff;"></i></span>
+                            <div>
+                                <h2>Yaşam Kalitesi</h2>
+                                <p>Uyku, beslenme ve fiziksel aktivite düzeyiniz.</p>
+                            </div>
+                        </div>
+                        <div class="hb-analysis-grid">
+                            <div class="hb-analysis-card">
+                                <label>Dün gece kaç saat uyudunuz?</label>
+                                <select id="sleepHours" class="hb-analysis-input mt-10">
+                                    <option value="4">4 Saatten az</option>
+                                    <option value="6">4 - 6 Saat</option>
+                                    <option value="8" selected>6 - 8 Saat</option>
+                                    <option value="9">8 - 10 Saat</option>
+                                    <option value="10">10+ Saat</option>
+                                </select>
+                            </div>
+                            <div class="hb-analysis-card">
+                                <label>Bugünkü beslenme düzeniniz?</label>
+                                <select class="hb-analysis-input mt-10">
+                                    <option selected>Sağlıklı / Dengeli</option>
+                                    <option>Düzensiz / Atıştırmalık</option>
+                                    <option>Aşırı Tüketim</option>
+                                </select>
+                            </div>
+                            <div class="hb-analysis-card full-width">
+                                <label>Uyku öncesi (son 30dk) mavi ışığa (telefon) maruz kaldınız mı?</label>
+                                <div class="hb-analysis-pill-group mt-10" style="max-width: 400px;">
+                                    <input type="radio" id="mavi-evet" name="mavi_isik" value="evet" checked>
+                                    <label for="mavi-evet">Evet, kullandım</label>
+
+                                    <input type="radio" id="mavi-hayir" name="mavi_isik" value="hayir">
+                                    <label for="mavi-hayir">Hayır, ekranı bıraktım</label>
+                                </div>
+                            </div>
+                            <div class="hb-analysis-card">
+                                <label>Ne kadar süre hareketsiz kaldınız?</label>
+                                <small>Oturarak, yatarak vb.</small>
+                                <select class="hb-analysis-input mt-10">
+                                    <option>1 - 3 Saat</option>
+                                    <option>3 - 5 Saat</option>
+                                    <option selected>5 - 8 Saat</option>
+                                    <option>8+ Saat</option>
+                                </select>
+                            </div>
+                            <div class="hb-analysis-card">
+                                <label>Şu an kendinizi nasıl hissediyorsunuz?</label>
+                                <input type="range" class="hb-analysis-range mt-10" min="1" max="5" value="3" step="1">
+                                <div class="hb-analysis-emoji-labels" style="color: #a0aec0; margin-top:12px;">
+                                    <span><i class="fa-solid fa-battery-empty" style="color:#e53e3e;"
+                                            title="Çok Bitkin"></i></span>
+                                    <span><i class="fa-solid fa-battery-quarter"></i></span>
+                                    <span><i class="fa-solid fa-battery-half"></i></span>
+                                    <span><i class="fa-solid fa-battery-three-quarters"></i></span>
+                                    <span><i class="fa-solid fa-battery-full" style="color:#38a169;"
+                                            title="Çok Enerjik"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="hb-analysis-section">
+                        <div class="hb-analysis-section-title">
+                            <span class="hb-analysis-icon"><i class="fa-solid fa-brain"
+                                    style="color: #6c63ff;"></i></span>
+                            <div>
+                                <h2>Psikolojik Farkındalık</h2>
+                                <p>Cihaz bağımlılığına dair içsel geri bildiriminiz.</p>
+                            </div>
+                        </div>
+                        <div class="hb-analysis-card full-width">
+                            <label>Cihazınızdan uzak kaldığınızda "eksik" veya "huzursuz" hissettiniz mi?</label>
+                            <div class="hb-analysis-pill-group mt-10">
+                                <input type="radio" id="huzur-hic" name="huzursuzluk" value="hic">
+                                <label for="huzur-hic">Hiç Hissetmedim</label>
+
+                                <input type="radio" id="huzur-biraz" name="huzursuzluk" value="biraz" checked>
+                                <label for="huzur-biraz">Biraz Hissettim</label>
+
+                                <input type="radio" id="huzur-cok" name="huzursuzluk" value="cok">
+                                <label for="huzur-cok">Çok Fazla Hissettim</label>
+                            </div>
+                        </div>
+                    </section>
+
+                    <div class="hb-analysis-form-actions">
+                        <button type="button" class="hb-analysis-btn-reset"><i class="fa-solid fa-rotate-left"></i>
+                            Girişleri Sıfırla</button>
+                        <button type="button" id="analysisSubmitBtn" class="hb-analysis-btn-submit">
+                            Analiz Et <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                    <div class="hb-analysis-note">
+                        <i class="fa-solid fa-shield-halved"></i> <strong>Not:</strong> Verileriniz gizli tutulur ve
+                        üçüncü taraflarla paylaşılmaz.
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/analysis.js"></script>
+</body>
+
+</html>

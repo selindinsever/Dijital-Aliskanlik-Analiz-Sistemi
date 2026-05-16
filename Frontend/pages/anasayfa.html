@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HabitBalance - Anasayfa</title>
+
+    <!-- Fontlar ve İkonlar -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/anasayfa.css">
+</head>
+
+<body>
+
+    <div class="hb-dashboard-layout">
+
+        <!-- ÜST BİLGİ ÇUBUĞU (HEADER) -->
+        <header class="hb-topbar">
+            <div class="hb-topbar-left">
+                <button id="menuToggleBtn" class="hb-menu-toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <a href="../pages/anasayfa.html" class="hb-logo-link">
+                    <!-- logo.png dosyanın adından emin ol -->
+                    <img src="../images/logo.png" alt="Logo" class="hb-logo-img">
+                </a>
+            </div>
+
+            <div class="hb-topbar-right">
+                <button class="hb-btn-new-goal" onclick="window.location.href='../pages/analiz.html'">
+                    <i class="fa-solid fa-plus"></i> Yeni Hedef Ekle
+                </button>
+               
+                <div class="hb-user-menu-wrapper">
+                    <img src="../images/ava.jpg" alt="User" class="hb-topbar-avatar" id="topbarAvatar">
+
+                    <div class="hb-user-dropdown" id="userDropdown">
+                        <button type="button" id="logoutBtn">
+                            <i class="fa-solid fa-right-from-bracket"></i> Çıkış Yap
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="hb-dashboard-body">
+
+            <!-- YAN MENÜ (SIDEBAR) -->
+            <aside class="hb-sidebar" id="sidebar">
+                <nav class="hb-sidebar-menu">
+                    <a href="../pages/anasayfa.html" class="hb-menu-item active">
+                        <i class="fa-solid fa-house"></i> Anasayfa
+                    </a>
+                    <a href="../pages/analiz.html" class="hb-menu-item">
+                        <i class="fa-solid fa-chart-pie"></i> Kullanım Analizi
+                    </a>
+                    <a href="../pages/dashboard.html" class="hb-menu-item">
+                        <i class="fa-solid fa-chart-line"></i> İstatistikler
+                    </a>
+                    <a href="../pages/profil.html" class="hb-menu-item">
+                        <i class="fa-solid fa-user"></i> Profil
+                    </a>
+                </nav>
+            </aside>
+
+            <!-- ANA İÇERİK ALANI -->
+            <main class="main-wrapper">
+
+                <section class="hero">
+                    <div class="hero-content">
+                        <h1>Dijital Alışkanlık Analizi İçin</h1>
+                        <a href="../pages/analiz.html" class="btn-main">Hemen Başla!</a>
+                    </div>
+
+                    <div class="hero-circles">
+                        <!-- Görsellerin 'images/' klasöründe olup olmadığını kontrol et -->
+                        <div class="circle-icon circle-1"><img src="../images/circle-1.png" alt="Analiz"></div>
+                        <div class="circle-icon circle-1"><img src="../images/circle-1.png" alt="Analiz"></div>
+                        <div class="circle-icon circle-2"><img src="../images/circle-2.png" alt="Sosyal"></div>
+                        <div class="circle-icon circle-3"><img src="../images/circle-3.png" alt="Odak"></div>
+                        <div class="circle-icon circle-4"><img src="../images/circle-4.png" alt="Zaman"></div>
+                        <div class="circle-icon circle-9"><img src="../images/circle-9.png" alt="İstatistik"></div>
+                        <div class="circle-icon circle-6"><img src="../images/circle-6.png" alt="Bağlantı"></div>
+                        <div class="circle-icon circle-7"><img src="../images/circle-7.png" alt="Rapor"></div>
+                    </div>
+                </section>
+
+                <section class="about">
+                    <div class="about-container">
+                        <div class="about-content">
+                            <span class="platform-label">Dijital Farkındalık Platformu</span>
+                            <div class="title-wrapper">
+                                <h2>Hakkımızda</h2>
+                                <div class="purple-curve"></div>
+                            </div>
+                            <p>Gelişen teknoloji çağında ekran başında geçirdiğimiz süre giderek artıyor. Bu platform,
+                                günlük dijital cihaz ve sosyal medya kullanım alışkanlıklarınızı analiz ederek size ayna
+                                tutmayı amaçlıyor.</p>
+                            <a href="#ozellikler" class="btn-detail">Detaylı Bilgi</a>
+                        </div>
+
+                        <div class="about-visual">
+                            <div class="illustration-bg">
+                                <img src="../images/about.png" alt="HabitBalance">
+                            </div>
+                            <div class="goals-floating-card">
+                                <h3>Temel Hedeflerimiz</h3>
+                                <div class="goal-item goal-blue">⏱️ Ekran Süresi Takibi</div>
+                                <div class="goal-item goal-pink">📊 Alışkanlık Analizi</div>
+                                <div class="goal-item goal-yellow">📁 Detaylı Raporlama</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="features-container" id="ozellikler">
+                    <div class="features-header">
+                        <span>Sistem Neler Sunuyor?</span>
+                        <h2>Öne Çıkan Özellikler</h2>
+                    </div>
+
+                    <div class="features-grid">
+                        <div class="f-card f-mint">
+                            <h3>Güvenli Veri Altyapısı</h3>
+                            <p>Kullanıcı verileri, MySQL veritabanında güvenli ve düzenli bir şekilde saklanır.</p>
+                            <div class="f-icon" style="background-image: url('../images/shield-icon.png');"></div>
+                        </div>
+
+                        <div class="f-card f-lavender">
+                            <h3>Esnek API Mimarisi</h3>
+                            <p>Swagger UI üzerinden dokümante edilmiş ve test edilebilir modern bir API yapısı.</p>
+                            <div class="f-icon" style="background-image: url('../images/api-icon.png');"></div>
+                        </div>
+
+                        <div class="f-card f-peach">
+                            <h3>Gelişmiş Dashboard</h3>
+                            <p>Elde edilen tüm veriler, grafiklerle desteklenerek anlaşılır bir kontrol panelinde
+                                sunulur.</p>
+                            <div class="f-icon" style="background-image: url('../images/chart-icon.png');"></div>
+                        </div>
+
+                        <div class="f-card f-rose">
+                            <h3>Zaman İçinde Takip</h3>
+                            <p>Dijital alışkanlıklarınızdaki değişimi zaman çizelgesinde takip etme imkanı.</p>
+                            <div class="f-icon" style="background-image: url('../images/time-icon.png');"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <footer>
+                    <div class="footer-form">
+                        <h3>Bizimle İletişime Geçin</h3>
+                        <form>
+                            <input type="email" placeholder="Email Adresiniz" required>
+                            <textarea placeholder="Mesajınız..." rows="4" style="resize: none;"></textarea>
+                            <button type="submit" class="btn-footer">GÖNDER</button>
+                        </form>
+                    </div>
+                </footer>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- JS Dosyaları -->
+    <script src="../js/script.js" defer></script>
+    <script src="../js/anasayfa.js" defer></script>
+</body>
+
+</html>

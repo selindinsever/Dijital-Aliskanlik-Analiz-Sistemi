@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+    background: linear-gradient(135deg, #cec1e2 0%, #8cb8e1 50%, #568aa7 100%);
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 1000px;
+    /* Konteynerı biraz daralttık */
+    min-height: 600px;
+    /* Yüksekliği daha dengeli yaptık */
+    background: #ffffff;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15);
+}
+
+.left-side {
+    flex: 1;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* İçerikleri yatayda ortaladık */
+    padding: 40px;
+    position: relative;
+}
+
+.login-link {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    font-size: 13px;
+    color: #64748b;
+}
+
+.login-link a {
+    color: #6B74E6;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.logo-area {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.logo-area img {
+    width: 150px;
+    /* Logoyu biraz küçülttük */
+    height: auto;
+}
+
+/* FORM BOYUTU BURADAN AYARLANIYOR */
+.form-container {
+    width: 100%;
+    max-width: 320px;
+    /* Form genişliğini 380'den 320'ye düşürdük */
+}
+
+h1 {
+    font-size: 24px;
+    /* Başlığı formla orantılı küçülttük */
+    margin-bottom: 20px;
+    color: #111;
+    font-weight: 700;
+    text-align: left;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    /* Boşlukları daralttık */
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 13px;
+    color: #555;
+    font-weight: 600;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    background-color: #f8fafc;
+    border-radius: 10px;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.input-group input:focus {
+    background-color: #ffffff;
+    border-color: #6B74E6;
+    box-shadow: 0 0 0 3px rgba(107, 116, 230, 0.1);
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 14px;
+    background-color: #6B74E6;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #5861D3;
+}
+
+.right-side {
+    flex: 1;
+    background-color: #A5A9F1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.right-side img {
+    max-width: 90%;
+    height: auto;
+}
+
+@media (max-width: 850px) {
+    .container {
+        flex-direction: column;
+        max-width: 400px;
+    }
+
+    .right-side {
+        display: none;
+    }
+}
