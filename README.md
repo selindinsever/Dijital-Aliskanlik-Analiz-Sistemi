@@ -1,8 +1,8 @@
-📊 HabitBalance: Dijital Alışkanlık Analiz Sistemi
+ HabitBalance: Dijital Alışkanlık Analiz Sistemi
 ---
 HabitBalance, modern çağın en büyük problemlerinden biri olan ekran bağımlılığına çözüm sunmak ve kullanıcıların dijital farkındalığını artırmak amacıyla geliştirilmiş tam katmanlı (Full-Stack) bir web platformudur. Kullanıcıların günlük dijital cihaz ve sosyal medya kullanım alışkanlıklarını analiz ederek kişiselleştirilmiş veriler ve grafik destekli analiz panelleri sunar.
 ---
-🚀 Öne Çıkan Özellikler
+ Öne Çıkan Özellikler
 Güvenli Veri Altyapısı: 
   Kullanıcı verileri ve şifreleri, arka planda güvenli şifreleme algoritmalarıyla işlenerek ilişkisel veritabanında düzenli bir şekilde saklanır.
 
@@ -18,7 +18,7 @@ Zaman İçinde Takip:
 Kişiselleştirilmiş Profil Yönetimi: 
   Kullanıcılar profil bilgilerini güncelleyebilir, güvenlik ayarlarını (şifre değiştirme/sıfırlama) yönetebilir ve kendilerine özel hedefler belirleyebilir.
 
-🛠️ Kullanılan Teknolojiler
+ Kullanılan Teknolojiler
 ---
   Backend & Veritabanı
 Dil: Java
@@ -41,7 +41,7 @@ IDE / Editör: Visual Studio Code / IntelliJ IDEA
 
 Sürüm Kontrolü: Git & GitHub
 ---
-💻 Geliştirme Ortamı Kurulum Adımları
+ Geliştirme Ortamı Kurulum Adımları
 ---
 Tüm takım üyelerinin ve projeye katkıda bulunmak isteyen geliştiricilerin platformu yerel bilgisayarlarında (local environment) sorunsuz çalıştırabilmesi için aşağıdaki adımların sırasıyla izlenmesi gerekmektedir:
 
@@ -77,9 +77,9 @@ Sayfalar arası yönlendirmelerin ve dinamik yapıların sorunsuz çalışması 
 
 Tarayıcınızda otomatik olarak http://localhost:3000 (veya Live Server portu olan http://127.0.0.1:5500) adresi açılacaktır.
 
-⚠️ Önemli Not: API isteklerinin doğru adrese iletilmesi için frontend içerisindeki script dosyalarında yer alan base URL tanımının, Spring Boot'un çalıştığı port ile (http://localhost:8080) eşleştiğinden emin olun.
+ Önemli Not: API isteklerinin doğru adrese iletilmesi için frontend içerisindeki script dosyalarında yer alan base URL tanımının, Spring Boot'un çalıştığı port ile (http://localhost:8080) eşleştiğinden emin olun.
 ---
-👥 Takım Üyeleri:
+ Takım Üyeleri:
 ---
 Selin Dinsever
 Furkan Arslan 
